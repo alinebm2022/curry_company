@@ -1,128 +1,161 @@
-# Restaurant Marketplace Analytics
+# Food Delivery Marketplace Analytics
 
-> Exploratory data analysis and interactive dashboard for a restaurant marketplace, focusing on geographic distribution, restaurant performance, pricing, ratings, cuisine types, and customer-facing services.
+> Exploratory data analysis and interactive dashboard for a food delivery marketplace, focusing on business growth, restaurant performance, delivery operations, and driver performance.
 
-[![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20Dashboard-red?logo=streamlit)](https://fomezero-alinebm.streamlit.app/)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20Dashboard-red?logo=streamlit)](https://projects-aline-curry-company.streamlit.app/)
 
 # 1. Business Problem
 
-Fome Zero is a restaurant marketplace that connects customers and restaurants through a digital platform.
+Cury Company is a technology company that operates a food delivery marketplace connecting restaurants, delivery drivers, and customers.
 
-Restaurants registered on the platform provide information such as location, cuisine type, ratings, pricing, delivery availability, online ordering, and reservations.
+Through the application, customers can order meals from registered restaurants and receive their orders through delivery drivers registered on the platform.
 
-You were hired as a Data Scientist to analyze the company's data and provide insights that could support the CEO in understanding the business and making strategic decisions.
+The company generates a large amount of data related to orders, delivery operations, restaurants, delivery drivers, traffic conditions, weather conditions, vehicle conditions, and customer ratings.
 
-The analysis focuses on restaurant distribution, customer ratings, pricing, cuisine types, and the services offered by restaurants.
+Although the number of deliveries is growing, the CEO does not have a consolidated view of the company's main growth and operational KPIs.
+
+You were hired as a Data Scientist to develop data-driven solutions for the delivery business. Before implementing predictive algorithms, the company's first need is to organize its main strategic KPIs into a single analytical tool that allows the CEO to monitor the business and support day-to-day decision-making.
+
+Cury Company operates under a **Marketplace business model**, connecting three main groups:
+
+- Restaurants
+- Delivery drivers
+- Customers
 
 # 2. Business Challenge
 
-The CEO needs a comprehensive view of the marketplace to better understand the company's current business landscape.
+The CEO needs a consolidated view of the company's main operational and growth indicators.
 
-The analysis was structured into five main perspectives:
+The analysis was structured into three main business perspectives:
 
-## General Overview
+## Company Perspective
 
-1. How many unique restaurants are registered?
-2. How many unique countries are represented?
-3. How many unique cities are represented?
-4. What is the total number of ratings?
-5. How many different cuisine types are registered?
+1. Number of orders per day
+2. Number of orders per week
+3. Distribution of orders by traffic conditions
+4. Order volume by city and traffic conditions
+5. Number of orders per delivery driver per week
+6. Central location of each city by traffic condition
 
-## Country Analysis
+## Delivery Driver Perspective
 
-1. Which country has the highest number of registered cities?
-2. Which country has the highest number of registered restaurants?
-3. Which country has the highest number of restaurants with a price level of 4?
-4. Which country has the greatest number of distinct cuisine types?
-5. Which country has the highest number of ratings?
-6. Which country has the highest number of restaurants offering delivery?
-7. Which country has the highest number of restaurants offering reservations?
-8. Which country has the highest average number of ratings per restaurant?
-9. Which country has the highest average restaurant rating?
-10. Which country has the lowest average restaurant rating?
-11. What is the average price for two people in each country?
+1. Youngest and oldest delivery drivers
+2. Best and worst vehicle conditions
+3. Average rating per delivery driver
+4. Average rating and standard deviation by traffic conditions
+5. Average rating and standard deviation by weather conditions
+6. Top 10 fastest delivery drivers by city
+7. Top 10 slowest delivery drivers by city
 
-## City Analysis
+## Restaurant Perspective
 
-1. Which city has the highest number of registered restaurants?
-2. Which city has the highest number of restaurants with an average rating above 4?
-3. Which city has the highest number of restaurants with an average rating below 2.5?
-4. Which city has the highest average price for two people?
-5. Which city has the greatest number of distinct cuisine types?
-6. Which city has the highest number of restaurants offering reservations?
-7. Which city has the highest number of restaurants offering delivery?
-8. Which city has the highest number of restaurants accepting online orders?
-
-## Restaurant Analysis
-
-1. Which restaurant has the highest number of ratings?
-2. Which restaurant has the highest average rating?
-3. Which restaurant has the highest price for two people?
-4. Which Brazilian cuisine restaurant has the lowest average rating?
-5. Which Brazilian cuisine restaurant in Brazil has the highest average rating?
-6. Do restaurants accepting online orders also have, on average, more ratings?
-7. Do restaurants offering reservations also have, on average, higher prices for two people?
-8. Do Japanese restaurants in the United States have a higher average price for two people than American BBQ restaurants?
-
-## Cuisine Analysis
-
-1. Which Italian cuisine restaurant has the highest average rating?
-2. Which Italian cuisine restaurant has the lowest average rating?
-3. Which American cuisine restaurant has the highest average rating?
-4. Which American cuisine restaurant has the lowest average rating?
-5. Which Arabic cuisine restaurant has the highest average rating?
-6. Which Arabic cuisine restaurant has the lowest average rating?
-7. Which Japanese cuisine restaurant has the highest average rating?
-8. Which Japanese cuisine restaurant has the lowest average rating?
-9. Which Home-style cuisine restaurant has the highest average rating?
-10. Which Home-style cuisine restaurant has the lowest average rating?
-11. Which cuisine type has the highest average price for two people?
-12. Which cuisine type has the highest average rating?
-13. Which cuisine type has the highest number of restaurants accepting online orders and offering delivery?
+1. Number of unique delivery drivers
+2. Average distance between restaurants and delivery locations
+3. Average delivery time and standard deviation by city
+4. Average delivery time and standard deviation by city and order type
+5. Average delivery time and standard deviation by city and traffic condition
+6. Average delivery time during festivals
 
 # 3. Data
 
-The analysis was conducted using restaurant marketplace data covering the period from **March 2025 to June 2025**.
+The analysis was conducted using food delivery marketplace data covering the period from **January 2025 to March 2025**.
 
-The dataset was analyzed through five main business perspectives:
+The dataset contains information related to:
 
-1. General Overview
-2. Country
-3. City
-4. Restaurant
-5. Cuisine
+- Orders
+- Restaurants
+- Delivery drivers
+- Delivery locations
+- Traffic conditions
+- Weather conditions
+- Vehicle conditions
+- Delivery times
+- Customer ratings
+- Festivals
 
-# 4. Key Insights
+The analysis was organized into three main business perspectives:
 
-## 4.1 India has the largest number of registered restaurants
+1. **Company**
+2. **Restaurants**
+3. **Delivery Drivers**
 
-India has the highest number of registered restaurants in the analyzed dataset.
+# 4. Analytical Strategy
 
-## 4.2 Indonesia has the highest average restaurant ratings
+The dashboard was designed around the three main perspectives of the marketplace business model.
 
-Indonesia has the highest restaurant ratings among the countries represented in the dataset.
+## 4.1 Company Growth
 
-## 4.3 Brazilian cities are represented among the top 10 cities
+The company perspective focuses on understanding order volume and its relationship with traffic and city characteristics.
 
-Three Brazilian cities are among the top 10 cities with the largest number of registered restaurants:
+Key metrics include:
 
-- São Paulo
-- Rio de Janeiro
-- Brasília
+- Orders per day
+- Orders per week
+- Orders by traffic condition
+- Orders by city
+- Orders by delivery type
+- Orders by traffic condition and city type
+- Orders per delivery driver
 
-These results highlight the geographic diversity of the marketplace dataset.
+## 4.2 Restaurant Performance
 
-# 5. Interactive Dashboard
+The restaurant perspective focuses on delivery operations and the factors associated with delivery time.
+
+Key metrics include:
+
+- Number of unique orders
+- Average delivery distance
+- Average delivery time
+- Delivery time variability
+- Delivery time by city
+- Delivery time by order type
+- Delivery time during festivals
+
+## 4.3 Delivery Driver Performance
+
+The delivery driver perspective focuses on driver characteristics, ratings, and delivery performance.
+
+Key metrics include:
+
+- Driver age
+- Vehicle condition
+- Average driver rating
+- Rating by traffic condition
+- Rating by weather condition
+- Fastest delivery drivers
+- Delivery performance by city
+
+# 5. Key Insights
+
+## 5.1 Daily order seasonality
+
+The number of orders presents a daily variation, with approximately **10% variation between consecutive days** in the analyzed period.
+
+## 5.2 Traffic conditions in Semi-Urban cities
+
+Semi-Urban cities do not have records classified as low traffic conditions in the analyzed dataset.
+
+## 5.3 Delivery time variation and weather
+
+The largest variations in delivery time occur under **Sunny weather conditions**.
+
+These findings provide an initial view of operational patterns that can be further investigated to understand the factors influencing delivery performance.
+
+# 6. Interactive Dashboard
 
 The project includes an interactive dashboard developed with **Streamlit**.
 
-The dashboard allows users to explore the main business metrics through different analytical perspectives, including countries, cities, restaurants, and cuisine types.
+The dashboard organizes the main business KPIs into three analytical views:
+
+- Company
+- Restaurants
+- Delivery Drivers
 
 ## Live Dashboard
 
-[Access the Fome Zero Dashboard](https://fomezero-alinebm.streamlit.app/)
+[Access the Cury Company Dashboard](https://projects-aline-curry-company.streamlit.app/)
 
-# 6. Technologies
+# 7. Technologies
 
 - Python
 - Pandas
@@ -130,19 +163,19 @@ The dashboard allows users to explore the main business metrics through differen
 - Exploratory Data Analysis
 - Data Visualization
 
-# 7. Project Structure
+# 8. Project Structure
 
 ```text
-fome_zero/
+curry_company/
 │
 ├── Home.py
 ├── README.md
 ├── requirements.txt
-├── zomato.csv
+├── train.csv
 ├── .gitignore
-├── comida.jpg
+├── eu.jpeg
 │
 └── pages/
-    ├── 1_visao_pais.py
-    ├── 2_visao_cidade.py
-    └── 3_visao_culinaria.py
+    ├── 1_visao_empresa_module.py
+    ├── 2_visao_entregador_module.py
+    └── 3_visao_restaurante_module.py
