@@ -1,96 +1,148 @@
-# 1. Problema de negócio
+# Restaurant Marketplace Analytics
 
-A Cury Company é uma empresa de tecnologia que criou um aplicativo que conecta restaurantes, entregadores e pessoas.
+> Exploratory data analysis and interactive dashboard for a restaurant marketplace, focusing on geographic distribution, restaurant performance, pricing, ratings, cuisine types, and customer-facing services.
 
-Através desse aplicativo, é possível realizar o pedido de uma refeição, em qualquer restaurante cadastrado, e recebê-lo no conforto da sua casa por um entregador também cadastrado no aplicativo da Cury Company.
+[![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20Dashboard-red?logo=streamlit)](https://fomezero-alinebm.streamlit.app/)
 
-A empresa realiza negócios entre restaurantes, entregadores e pessoas, e gera muitos dados sobre entregas, tipos de pedidos, condições climáticas, avaliação dos entregadores e etc. Apesar da entrega estar crescendo, em termos de entregas, o CEO não tem visibilidade completa dos KPIs de crescimento da empresa.
+# 1. Business Problem
 
-Você foi contratado como um Cientista de Dados para criar soluções de dados para entrega, mas antes de treinar algoritmos, a necessidade da empresa é ter um os principais KPIs estratégicos organizados em uma única ferramenta, para que o CEO possa consultar e conseguir tomar decisões simples, porém importantes.
+Fome Zero is a restaurant marketplace that connects customers and restaurants through a digital platform.
 
-A Cury Company possui um modelo de negócio chamado Marketplace, que fazer o intermédio do negócio entre três clientes principais: Restaurantes, entregadores e pessoas compradoras. Para acompanhar o crescimento desses negócios, o CEO gostaria de ver as seguintes métricas de crescimento:
+Restaurants registered on the platform provide information such as location, cuisine type, ratings, pricing, delivery availability, online ordering, and reservations.
 
-## Do lado da empresa:
-1. Quantidade de pedidos por dia.
-2. Quantidade de pedidos por semana.
-3. Distribuição dos pedidos por tipo de tráfego.
-4. Comparação do volume de pedidos por cidade e tipo de tráfego.
-4. A quantidade de pedidos por entregador por semana.
-5. A localização central de cada cidade por tipo de tráfego.
+You were hired as a Data Scientist to analyze the company's data and provide insights that could support the CEO in understanding the business and making strategic decisions.
 
-## Do lado do entregador:
-1. A menor e maior idade dos entregadores.
-2. A pior e a melhor condição de veículos.
-3. A avaliação médida por entregador.
-4. A avaliação média e o desvio padrão por tipo de tráfego.
-5. A avaliação média e o desvio padrão por condições climáticas.
-6. Os 10 entregadores mais rápidos por cidade.
-7. Os 10 entregadores mais lentos por cidade.
+The analysis focuses on restaurant distribution, customer ratings, pricing, cuisine types, and the services offered by restaurants.
 
-## Do lado do restaurantes:
-1. A quantidade de entregadores únicos.
-2. A distância média dos resturantes e dos locais de entrega.
-3. O tempo médio e o desvio padrão de entrega por cidade.
-4. O tempo médio e o desvio padrão de entrega por cidade e tipo de pedido.
-5. O tempo médio e o desvio padrão de entrega por cidade e tipo de tráfego.
-6. O tempo médio de entrega durantes os Festivais.
+# 2. Business Challenge
 
-O objetivo desse projeto é criar um conjunto de gráficos e/ou tabelas que
-exibam essas métricas da melhor forma possível para o CEO.
+The CEO needs a comprehensive view of the marketplace to better understand the company's current business landscape.
 
-# 2. Premissas assumidas para a análise
-1. A análise foi realizada com dados entre Janeiro/2025 e Março/2025.
-2. Marketplace foi o modelo de negócio assumido.
-3. Os 3 principais visões do negócio foram: Visão transação de pedidos, visão restaurante e visão entregadores.
+The analysis was structured into five main perspectives:
 
-# 3. Estratégia da solução
-O painel estratégico foi desenvolvido utilizando as métricas que refletem
-as 3 principais visões do modelo de negócio da empresa:
-1. Visão do crescimento da empresa
-2. Visão do crescimento dos restaurantes
-3. Visão do crescimento dos entregadores
+## General Overview
 
-Cada visão é representada pelo seguinte conjunto de métricas.
+1. How many unique restaurants are registered?
+2. How many unique countries are represented?
+3. How many unique cities are represented?
+4. What is the total number of ratings?
+5. How many different cuisine types are registered?
 
-## 1. Visão do crescimento da empresa
-a. Pedidos por dia.    
-b. Porcentagem de pedidos por condições de trânsito.    
-c. Quantidade de pedidos por tipo e por cidade.  
-d. Pedidos por semana.  
-e. Quantidade de pedidos por tipo de entrega.   
-f. Quantidade de pedidos por condições de trânsito e tipo de cidade.   
+## Country Analysis
 
-## 2. Visão do crescimento dos restaurantes
-a. Quantidade de pedidos únicos.  
-b. Distância média percorrida.  
-c. Tempo médio de entrega durante festival e dias normais.  
-d. Desvio padrão do tempo de entrega durante festivais e dias normais.  
-e. Tempo de entrega médio por cidade.  
-f. Distribuição do tempo médio de entrega por cidade.  
-g. Tempo médio de entrega por tipo de pedido.  
+1. Which country has the highest number of registered cities?
+2. Which country has the highest number of registered restaurants?
+3. Which country has the highest number of restaurants with a price level of 4?
+4. Which country has the greatest number of distinct cuisine types?
+5. Which country has the highest number of ratings?
+6. Which country has the highest number of restaurants offering delivery?
+7. Which country has the highest number of restaurants offering reservations?
+8. Which country has the highest average number of ratings per restaurant?
+9. Which country has the highest average restaurant rating?
+10. Which country has the lowest average restaurant rating?
+11. What is the average price for two people in each country?
 
-## 3. Visão do crescimento dos entregadores
-a. Idade do entregador mais velho e do mais novo.  
-b. Avaliação do melhor e do pior veículo.  
-c. Avaliação média por entregador.  
-d. Avaliação média por condições de trânsito.  
-e. Avaliação média por condições climáticas.  
-f. Tempo médido do entregador mais rápido.  
-g. Tempo médio do entregador mais rápido por cidade.  
+## City Analysis
 
-# 4. Top 3 Insights de dados:
-1. A sazonalidade da quantidade de pedidos é diária. Há uma variação de aproximadamente 10% do número de pedidos em dia sequenciais.
-2. As cidades do tipo Semi-Urban não possuem condições baixas de trânsito.
-3. As maiores variações no tempo de entrega, acontecem durante o clima ensoladao.
+1. Which city has the highest number of registered restaurants?
+2. Which city has the highest number of restaurants with an average rating above 4?
+3. Which city has the highest number of restaurants with an average rating below 2.5?
+4. Which city has the highest average price for two people?
+5. Which city has the greatest number of distinct cuisine types?
+6. Which city has the highest number of restaurants offering reservations?
+7. Which city has the highest number of restaurants offering delivery?
+8. Which city has the highest number of restaurants accepting online orders?
 
-# 5. O produto final do projeto
-Painel online, hospedado em um Cloud e disponível para acesso em qualquer dispositivo conectado à internet.
-O painel pode ser acessado através desse link: https://projects-aline-curry-company.streamlit.app/
+## Restaurant Analysis
 
-# 6. Conclusão
-O objetivo desse projeto é criar um conjunto de gráficos e/ou tabelas que exibam essas métricas da melhor forma possível para o CEO.
+1. Which restaurant has the highest number of ratings?
+2. Which restaurant has the highest average rating?
+3. Which restaurant has the highest price for two people?
+4. Which Brazilian cuisine restaurant has the lowest average rating?
+5. Which Brazilian cuisine restaurant in Brazil has the highest average rating?
+6. Do restaurants accepting online orders also have, on average, more ratings?
+7. Do restaurants offering reservations also have, on average, higher prices for two people?
+8. Do Japanese restaurants in the United States have a higher average price for two people than American BBQ restaurants?
 
-# 7. Próximo passos
-1. Reduzir o número de métricas.
-2. Criar novos filtros.
-3. Adicionar novas visões de negócio.
+## Cuisine Analysis
+
+1. Which Italian cuisine restaurant has the highest average rating?
+2. Which Italian cuisine restaurant has the lowest average rating?
+3. Which American cuisine restaurant has the highest average rating?
+4. Which American cuisine restaurant has the lowest average rating?
+5. Which Arabic cuisine restaurant has the highest average rating?
+6. Which Arabic cuisine restaurant has the lowest average rating?
+7. Which Japanese cuisine restaurant has the highest average rating?
+8. Which Japanese cuisine restaurant has the lowest average rating?
+9. Which Home-style cuisine restaurant has the highest average rating?
+10. Which Home-style cuisine restaurant has the lowest average rating?
+11. Which cuisine type has the highest average price for two people?
+12. Which cuisine type has the highest average rating?
+13. Which cuisine type has the highest number of restaurants accepting online orders and offering delivery?
+
+# 3. Data
+
+The analysis was conducted using restaurant marketplace data covering the period from **March 2025 to June 2025**.
+
+The dataset was analyzed through five main business perspectives:
+
+1. General Overview
+2. Country
+3. City
+4. Restaurant
+5. Cuisine
+
+# 4. Key Insights
+
+## 4.1 India has the largest number of registered restaurants
+
+India has the highest number of registered restaurants in the analyzed dataset.
+
+## 4.2 Indonesia has the highest average restaurant ratings
+
+Indonesia has the highest restaurant ratings among the countries represented in the dataset.
+
+## 4.3 Brazilian cities are represented among the top 10 cities
+
+Three Brazilian cities are among the top 10 cities with the largest number of registered restaurants:
+
+- São Paulo
+- Rio de Janeiro
+- Brasília
+
+These results highlight the geographic diversity of the marketplace dataset.
+
+# 5. Interactive Dashboard
+
+The project includes an interactive dashboard developed with **Streamlit**.
+
+The dashboard allows users to explore the main business metrics through different analytical perspectives, including countries, cities, restaurants, and cuisine types.
+
+## Live Dashboard
+
+[Access the Fome Zero Dashboard](https://fomezero-alinebm.streamlit.app/)
+
+# 6. Technologies
+
+- Python
+- Pandas
+- Streamlit
+- Exploratory Data Analysis
+- Data Visualization
+
+# 7. Project Structure
+
+```text
+fome_zero/
+│
+├── Home.py
+├── README.md
+├── requirements.txt
+├── zomato.csv
+├── .gitignore
+├── comida.jpg
+│
+└── pages/
+    ├── 1_visao_pais.py
+    ├── 2_visao_cidade.py
+    └── 3_visao_culinaria.py
